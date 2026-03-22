@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background: #f5f5f5;
+    color: #000;
+    padding-bottom: 90px;
+}
+
+.header {
+    background: white;
+    padding: 15px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.back-btn {
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+    line-height: 1;
+}
+
+.header-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.content {
+    padding: 14px 14px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Section card */
+.section-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.section-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 12px 14px 6px;
+}
+
+/* Order meta row */
+.meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.meta-row:last-child {
+    border-bottom: none;
+}
+
+.meta-key {
+    font-size: 13px;
+    color: #666;
+}
+
+.meta-val {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Status badge inline */
+.status-badge {
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-new       { background: #fff3cd; color: #856404; }
+.status-confirmed { background: #cfe2ff; color: #084298; }
+.status-sent      { background: #d1ecf1; color: #0c5460; }
+.status-delivered { background: #d1e7dd; color: #0f5132; }
+.status-archived  { background: #e2e3e5; color: #41464b; }
+.status-cancelled { background: #f8d7da; color: #842029; }
+
+/* Item row */
+.item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.item-row:last-child {
+    border-bottom: none;
+}
+
+.item-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+}
+
+.item-badge {
+    background: #007c00;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    min-width: 26px;
+    height: 26px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.item-name {
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.item-price {
+    font-size: 13px;
+    color: #444;
+    white-space: nowrap;
+    margin-left: 8px;
+}
+
+/* Summary rows */
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 9px 14px;
+    font-size: 13px;
+    border-bottom: 1px solid #f5f5f5;
+    color: #555;
+}
+
+.summary-row:last-child {
+    border-bottom: none;
+}
+
+.summary-total {
+    font-size: 15px;
+    font-weight: 700;
+    color: #007c00;
+}
+
+/* Delivery info banner */
+.delivery-banner {
+    background: #f0fff0;
+    border-left: 3px solid #007c00;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #007c00;
+    font-weight: 500;
+}
+
+/* Bottom nav */
+.bottom-nav {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    color: #000;
+    position: relative;
+}
+
+.nav-item.active .nav-icon {
+    background: #007c00;
+    color: white;
+}
+
+.nav-item.cart {
+    margin-top: -30px;
+}
+
+.nav-item.cart .nav-icon {
+    width: 70px;
+    height: 70px;
+    background: #CCC;
+    border-radius: 50%;
+}
+
+.nav-icon svg {
+    width: 28px;
+    height: 28px;
+    stroke: currentColor;
+}
+
+.nav-item.cart .nav-icon svg {
+    width: 35px;
+    height: 35px;
+}
+
+.cart-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #ff4757;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 7px;
+    border-radius: 10px;
+    min-width: 20px;
+    text-align: center;
+}

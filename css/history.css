@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background: #f5f5f5;
+    color: #000;
+    padding-bottom: 80px;
+}
+
+.header {
+    background: white;
+    padding: 15px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.back-btn {
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.header-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.tabs {
+    background: white;
+    display: flex;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.tab {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.tab.active {
+    background: #007c00;
+    color: white;
+}
+
+.orders-list {
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Compact order card */
+.order-card {
+    background: white;
+    border-radius: 12px;
+    padding: 14px 16px;
+    cursor: pointer;
+    active: background #f5f5f5;
+    transition: background 0.15s;
+}
+
+.order-card:active {
+    background: #f5f5f5;
+}
+
+.order-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.order-number {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.order-date-row {
+    font-size: 12px;
+    color: #888;
+}
+
+/* Status badges */
+.order-status {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-new {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status-confirmed {
+    background: #cfe2ff;
+    color: #084298;
+}
+
+.status-sent {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.status-delivered {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.status-archived {
+    background: #e2e3e5;
+    color: #41464b;
+}
+
+.status-cancelled {
+    background: #f8d7da;
+    color: #842029;
+}
+
+/* Empty state */
+.empty-orders {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.empty-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.empty-text {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Skeleton */
+.skeleton-order {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 8px;
+}
+
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    border-radius: 4px;
+}
+
+@keyframes loading {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.skeleton-line {
+    height: 14px;
+    margin-bottom: 8px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    color: #000;
+    position: relative;
+}
+
+.nav-item.active .nav-icon {
+    background: #007c00;
+    color: white;
+}
+
+.nav-item.cart {
+    margin-top: -30px;
+}
+
+.nav-item.cart .nav-icon {
+    width: 70px;
+    height: 70px;
+    background: #CCC;
+    color: #000;
+    border-radius: 50%;
+}
+
+.nav-icon svg {
+    width: 28px;
+    height: 28px;
+    stroke: currentColor;
+}
+
+.nav-item.cart .nav-icon svg {
+    width: 35px;
+    height: 35px;
+}
+
+.cart-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #ff4757;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 7px;
+    border-radius: 10px;
+    min-width: 20px;
+    text-align: center;
+}
