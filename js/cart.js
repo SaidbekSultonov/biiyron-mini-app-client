@@ -294,7 +294,9 @@ async function checkout() {
             }, 1500);
 
         } else {
-            if (data.below_min_limit_products) {
+            if (data.missing_required_products) {
+                showMissingRequiredModal(data.missing_required_products);
+            } else if (data.below_min_limit_products) {
                 showBelowMinLimitModal(data.below_min_limit_products);
             } else if (data.insufficient_products) {
                 showInsufficientModal(data.insufficient_products);
@@ -388,10 +390,42 @@ function showBelowMinLimitModal(products) {
     $('body').append(modal);
 }
 
+function showMissingRequiredModal(products) {
+    $('#loadingModal').remove();
+
+    let productsList = '';
+    products.forEach(p => {
+        productsList += `
+            <div class="insufficient-item">
+                <div class="insufficient-name">${p.name}</div>
+                <div class="insufficient-details">
+                    ${msg.required_min_label} ${p.min_quantity} ${p.unit}
+                </div>
+            </div>
+        `;
+    });
+
+    const modal = `
+        <div class="modal-overlay" id="requiredProductsModal">
+            <div class="modal-content modal-error">
+                <div class="modal-icon">🔒</div>
+                <div class="modal-title">${msg.required_products_title}</div>
+                <div class="insufficient-list">
+                    ${productsList}
+                </div>
+                <button class="btn-modal-close" onclick="hideModal()">${msg.modify_cart}</button>
+            </div>
+        </div>
+    `;
+    $('body').append(modal);
+    $('body').css('overflow', 'hidden');
+}
+
 function hideModal() {
     $('#loadingModal').remove();
     $('#insufficientModal').remove();
     $('#belowMinModal').remove();
+    $('#requiredProductsModal').remove();
     $('body').css('overflow', 'auto');
 }
 

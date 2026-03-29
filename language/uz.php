@@ -106,6 +106,10 @@ return $lang = [
     'warehouse_label'        => 'Omborda:',
     'modify_cart'            => 'Savatni o\'zgartirish',
 
+    // ── Majburiy mahsulotlar modal ───────────────────────────────────
+    'required_products_title' => 'Majburiy mahsulotlar',
+    'required_min_label'      => 'Minimum:',
+
     // ── Buyurtmalar tarixi ───────────────────────────────────────────
     'no_orders'              => 'Buyurtmalar topilmadi',
     'status_new'             => 'Yangi',

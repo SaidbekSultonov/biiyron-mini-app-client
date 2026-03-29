@@ -106,6 +106,10 @@ return $lang = [
     'warehouse_label'        => 'На складе:',
     'modify_cart'            => 'Изменить корзину',
 
+    // ── Majburiy mahsulotlar modal ───────────────────────────────────
+    'required_products_title' => 'Обязательные товары',
+    'required_min_label'      => 'Минимум:',
+
     // ── Buyurtmalar tarixi ───────────────────────────────────────────
     'no_orders'              => 'Заказы не найдены',
     'status_new'             => 'Новый',
