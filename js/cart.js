@@ -290,7 +290,7 @@ async function checkout() {
             showToast(msg.order_accepted, 'success');
 
             setTimeout(() => {
-                window.location.href = 'history.php';
+                window.location.href = `history.php?user_id=${userId}`;
             }, 1500);
 
         } else {

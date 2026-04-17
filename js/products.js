@@ -115,7 +115,7 @@ function renderProducts(products) {
 }
 
 function openProduct(id) {
-    window.location = `product-detail.php?product_id=${id}&lang=${userLang}`;
+    window.location = `product-detail.php?product_id=${id}&lang=${userLang}&user_id=${userId}`;
 }
 
 async function addToCart(productId) {

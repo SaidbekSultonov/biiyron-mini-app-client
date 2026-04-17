@@ -136,7 +136,7 @@ async function loadCart() {
 }
 
 function openProduct(id) {
-    window.location = `product-detail.php?product_id=${id}&lang=${userLang}`;
+    window.location = `product-detail.php?product_id=${id}&lang=${userLang}&user_id=${userId}`;
 }
 
 async function addToCart(productId) {
@@ -269,7 +269,7 @@ async function loadCategories() {
             const randomColor = colors[Math.floor(Math.random() * colors.length)];
             
             container.append(`
-                <div class="category-card" onclick="window.location='products.php?category_id=${category.id}'">
+                <div class="category-card" onclick="window.location='products.php?category_id=${category.id}&user_id=${userId}'">
                     <div class="category-icon-wrapper" style="background: linear-gradient(135deg, ${randomColor[0]}, ${randomColor[1]});">
                         <img src="${apiUrl.replace('/api', '')}/${category.image}" alt="${category.name}" class="category-icon">
                     </div>

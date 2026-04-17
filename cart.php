@@ -92,7 +92,7 @@
     <div class="empty-cart" id="emptyCart" style="display: none;">
         <div class="empty-icon">🛒</div>
         <div class="empty-text"><?= $lang['cart_empty_text'] ?></div>
-        <button class="btn-shop" onclick="window.location='index.php'"><?= $lang['btn_shop'] ?></button>
+        <button class="btn-shop" onclick="window.location='index.php?user_id=<?= $user_id ?>'"><?= $lang['btn_shop'] ?></button>
     </div>
 
     <!-- Shops selection -->
@@ -108,7 +108,7 @@
     <div id="warehouse_id" data-id="<?= $warehouse_id ?>"></div>
 
     <div class="bottom-nav">
-        <a href="index.php" class="nav-item">
+        <a href="index.php?user_id=<?= $user_id ?>" class="nav-item">
             <div class="nav-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
@@ -117,7 +117,7 @@
             </div>
         </a>
         
-        <a href="categories.php" class="nav-item">
+        <a href="categories.php?user_id=<?= $user_id ?>" class="nav-item">
             <div class="nav-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <rect x="3" y="3" width="7" height="7" rx="1"></rect>
@@ -139,7 +139,7 @@
             </div>
         </div>
         
-        <a href="history.php" class="nav-item">
+        <a href="history.php?user_id=<?= $user_id ?>" class="nav-item">
             <div class="nav-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M9 5H7C5.89543 5 5 5.89543 5 7V19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19V7C19 5.89543 18.1046 5 17 5H15"/>
@@ -152,7 +152,7 @@
             </div>
         </a>
         
-        <a href="profile.php" class="nav-item">
+        <a href="profile.php?user_id=<?= $user_id ?>" class="nav-item">
             <div class="nav-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="12" cy="8" r="4"></circle>
