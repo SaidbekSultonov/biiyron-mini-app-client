@@ -13,8 +13,9 @@ if (!$user_id || !$lang) {
 
 $lang_int = match($lang) {
     'uz'    => 1,
-    'kr'    => 2,
-    default => 3,
+    'ru'    => 2,
+    'kr'    => 3,
+    default => 1,
 };
 
 $stmt = $conn->prepare("UPDATE clients SET language = ? WHERE chat_id = ?");
