@@ -31,7 +31,7 @@ $step_id = '';
 
 $group_id = '-5026004534'; // aosiy gruppa
 $admins = ['284914591'];
-$eskiz_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzY2Njk4NzAsImlhdCI6MTc3NDA3Nzg3MCwicm9sZSI6InVzZXIiLCJzaWduIjoiYjlhMjA0NmUwZmVjZTY4YTc5MzVjMDE5MDhjZWEzYmYzZjllMzhkMTM1ZWQyMTJmN2M2MGMyYjc0YzBmN2U3YiIsInN1YiI6IjEzNDg0In0.WIPvDrdjvqtUi-lNS-ujyxZo6VI9EXYv4rAgAJnK_pk';
+$eskiz_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzkwNDkwMzAsImlhdCI6MTc3NjQ1NzAzMCwicm9sZSI6InVzZXIiLCJzaWduIjoiYjlhMjA0NmUwZmVjZTY4YTc5MzVjMDE5MDhjZWEzYmYzZjllMzhkMTM1ZWQyMTJmN2M2MGMyYjc0YzBmN2U3YiIsInN1YiI6IjEzNDg0In0.YIBwQBptf6JEy0BkAfpT-ARvG3gQ7Yi4hrnLZUJeWIY';
 $add_shop_text_uz = "BIYRON dasturiga kirish kodingiz:";
 $add_shop_text_ru = "Ваш код доступа к программе BIYRON:";
 $apiKey = 'f6f40aea-928a-4aab-b6e7-92fad1b3333f';
