@@ -22,14 +22,16 @@
 
     $lang_code = match((int)($client_shop['language'] ?? 1)) {
         1 => 'uz',
-        2 => 'kr',
-        default => 'ru'
+        2 => 'ru',
+        3 => 'kr',
+        default => 'uz'
     };
 
     $name = match((int)($client_shop['language'] ?? 1)) {
         1 => 'name_uz',
-        2 => 'name_kr',
-        default => 'name_ru'
+        2 => 'name_ru',
+        3 => 'name_kr',
+        default => 'name_uz'
     };
 
     include "language/{$lang_code}.php";

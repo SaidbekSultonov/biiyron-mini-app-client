@@ -19,8 +19,9 @@
 
     $lang_code = match((int)($client['language'] ?? 1)) {
         1 => 'uz',
-        2 => 'kr',
-        default => 'ru'
+        2 => 'ru',
+        3 => 'kr',
+        default => 'uz'
     };
 
     $district_col = match($lang_code) {

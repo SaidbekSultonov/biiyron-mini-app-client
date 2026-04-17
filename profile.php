@@ -29,8 +29,9 @@
 
     $lang_code = match((int)($client_shop['language'] ?? 1)) {
         1 => 'uz',
-        2 => 'kr',
-        default => 'ru'
+        2 => 'ru',
+        3 => 'kr',
+        default => 'uz'
     };
 
     $owner_name   = $client_shop['owner_name']   ?? '';
