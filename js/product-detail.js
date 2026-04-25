@@ -96,12 +96,14 @@ function showError(message) {
 }
 
 async function increaseQuantity() {
+    const step = product.is_blocked ? product.min_limit : 1;
+
     const requiredStock = product.type == 2
-        ? (currentQuantity + 1) * product.product_weight
-        : currentQuantity + 1;
+        ? (currentQuantity + step) * product.product_weight
+        : currentQuantity + step;
 
     if (requiredStock <= maxStock) {
-        currentQuantity++;
+        currentQuantity += step;
         updateUI();
         await saveToCart();
     } else {
@@ -113,16 +115,18 @@ async function increaseQuantity() {
 }
 
 async function decreaseQuantity() {
-    if (currentQuantity > 1) {
-        if (minLimit > 0 && currentQuantity <= minLimit) {
+    const step = product.is_blocked ? product.min_limit : 1;
+
+    if (currentQuantity > step) {
+        if (!product.is_blocked && minLimit > 0 && currentQuantity <= minLimit) {
             const unit = product.type == 1 ? msg.unit_ta : msg.unit_kg;
             showToast(msg.min_order_label + ' ' + minLimit + ' ' + unit, 'error');
             return;
         }
-        currentQuantity--;
+        currentQuantity -= step;
         updateUI();
         await saveToCart();
-    } else if (currentQuantity == 1 && cartItem) {
+    } else if (currentQuantity <= step && cartItem) {
         await removeFromCart();
     }
 }
@@ -168,7 +172,7 @@ function updateUI() {
 }
 
 async function addFirstTime() {
-    currentQuantity = minLimit > 0 ? minLimit : 1;
+    currentQuantity = product.is_blocked ? product.min_limit : (minLimit > 0 ? minLimit : 1);
     await saveToCart();
 }
 

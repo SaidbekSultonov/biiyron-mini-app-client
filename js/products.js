@@ -119,6 +119,9 @@ function openProduct(id) {
 }
 
 async function addToCart(productId) {
+    const product = allProducts.find(p => p.id == productId);
+    const qty     = product?.is_blocked ? product.min_limit : 1;
+
     try {
         const response = await fetch(`${apiUrl}/cart/add`, {
             method: 'POST',
@@ -126,7 +129,7 @@ async function addToCart(productId) {
             body: JSON.stringify({
                 chat_id: userId,
                 product_id: productId,
-                quantity: 1,
+                quantity: qty,
                 lang: userLang
             })
         });
@@ -152,14 +155,18 @@ async function removeFromCart(productId) {
     const cartItem = cartItems[productId];
     if (!cartItem) return;
 
+    const product  = allProducts.find(p => p.id == productId);
+    const step     = product?.is_blocked ? product.min_limit : 1;
+    const newQty   = cartItem.quantity - step;
+
     try {
-        if (cartItem.quantity > 1) {
+        if (newQty >= step) {
             const response = await fetch(`${apiUrl}/cart/update`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     cart_id: cartItem.cart_id,
-                    quantity: cartItem.quantity - 1,
+                    quantity: newQty,
                     lang: userLang
                 })
             });
